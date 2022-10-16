@@ -4,17 +4,130 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "starter",
+            "label": "client_console",
             "options": {
                 "cwd": "${workspaceFolder}"
-               },
+            },
             "command": "mingw32-make.exe",
             "args": [
                 "-f",
                 ".vscode/makefile",
-                "starter"
+                "client_console"
             ],
-
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "client_gui",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "mingw32-make.exe",
+            "args": [
+                "-f",
+                ".vscode/makefile",
+                "client_gui"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "server_echo_console",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "mingw32-make.exe",
+            "args": [
+                "-f",
+                ".vscode/makefile",
+                "server_echo_console"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "server_echo_gui",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "mingw32-make.exe",
+            "args": [
+                "-f",
+                ".vscode/makefile",
+                "server_echo_gui"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "server_job_gui",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "mingw32-make.exe",
+            "args": [
+                "-f",
+                ".vscode/makefile",
+                "server_job_gui"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "bbserver",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "mingw32-make.exe",
+            "args": [
+                "-f",
+                ".vscode/makefile",
+                "bbserver"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "server_relay",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "mingw32-make.exe",
+            "args": [
+                "-f",
+                ".vscode/makefile",
+                "server_relay"
+            ],
             "problemMatcher": [
                 "$gcc"
             ],
@@ -27,14 +140,13 @@
             "label": "clean",
             "options": {
                 "cwd": "${workspaceFolder}"
-               },
+            },
             "command": "mingw32-make.exe",
             "args": [
                 "-f",
                 ".vscode/makefile",
                 "clean"
             ],
-
             "problemMatcher": [
                 "$gcc"
             ],
@@ -42,7 +154,23 @@
                 "kind": "build",
                 "isDefault": false
             }
+        },
+        {
+            "label": "Build ALL",
+            "dependsOn": [
+                "client_console",
+                "client_gui",
+                "server_echo_console",
+                "server_echo_gui",
+                "server_job_gui",
+                "bbserver",
+                "server_relay"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+            "problemMatcher": []
         }
-
     ]
 }
